@@ -1,0 +1,133 @@
+.header {
+    background-color: rgb(202, 199, 199);
+    box-shadow: 5px 5px 5px -5px;
+    padding: 20px;
+}
+
+
+.id_photo {
+    width: 30%;
+}
+
+.name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40pt;
+    width: 100%;
+}
+
+.buttons {
+    margin-top: 20px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24pt;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+    width: 30%;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    padding: 4px;
+}
+
+.button:hover {
+    background-color: rgb(166, 201, 189);
+    cursor: pointer;
+}
+
+#main {
+    margin-top: 30px;
+    background-color: rgb(202, 199, 199);
+    padding: 30px;
+    box-shadow: 5px 5px 5px -5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.home_page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bio {
+    width: 60%;
+    height: 100%;
+}
+
+.bio > .bio_title {
+    width: 100%;
+    font-size: 24pt;
+    text-decoration: underline;
+}
+
+.bio > .description {
+    margin-top: 40px;
+    font-size: 16pt;
+}
+
+.papers_page {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#paper_summary {
+    width: 45%;
+    font-size: 14pt;
+    position: sticky;
+}
+
+.main_list_title {
+    font-size: 24pt;
+    text-decoration: underline;
+}
+
+.other_types {
+    font-size: 24pt;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+.abstract_title {
+    font-size: 16pt;
+    text-decoration: underline;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.papers_list {
+    width: 45%;
+}
+
+.papers_list > .paper {
+    border-width: 2px;
+    border-style: solid;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.paper > .paper_title {
+    width: 100%;
+    font-size: 16pt;
+}
+
+.paper > .paper_authors {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 14pt;
+}
+
+.paper > .paper_journal {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 14pt;
+}
+
+.paper:hover {
+    background-color: rgb(166, 201, 189);
+}
