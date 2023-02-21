@@ -12,6 +12,9 @@
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
         <link rel="stylesheet" href="index.css">
+        <script src="home.js"></script>
+        <script src="papers.js"></script>
+        <script src="cv.js"></script>
         <script src="script.js"></script>
     </head>
     <body>
@@ -22,7 +25,7 @@
             <div class="buttons">
                 <div class="button" id="home">Home</div>
                 <div class="button" id="papers">Papers</div>
-                <div class="button" id="papers">CV</div>
+                <div class="button" id="cv">CV</div>
             </div>
         </div>
         <div id="main">
@@ -31,6 +34,7 @@
         <script>
             document.getElementById('home').onclick = home;
             document.getElementById('papers').onclick = papers;
+            document.getElementById('cv').onclick = cv;
         </script>
     </body>
 </html>
