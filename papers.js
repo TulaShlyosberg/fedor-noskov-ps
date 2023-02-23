@@ -9,6 +9,7 @@ var paperListMain = new Array(
         'authors': 'Andrei Kupavskii and Fedor Noskov',
         'journal': 'accepted to Journal of Combinatorial Theory, Series B',
         'arxiv_link': 'https://arxiv.org/abs/2209.04756',
+        'visual_abstract': 'img/abstracts/octopuses.png',
         'abstract': String.raw`Let $\mathcal{F}_1, \ldots, \mathcal{F}_\ell$ be families of subsets of $\{1, \ldots, n\}$. Suppose that for distinct $k, k'$ and arbitrary $F_1 \in \mathcal{F}_{k}, F_2 \in \mathcal{F}_{k'}$ we have $|F_1 \cap F_2|\le m.$  What is the maximal value of $|\mathcal{F}_1|\ldots |\mathcal{F}_\ell|$?
         In this work we find the asymptotic of this product as $n$ tends to infinity for constant $\ell$ and~$m$.
         
@@ -21,6 +22,7 @@ var paperListMain = new Array(
         'authors': 'Nikita Kotelevskii, Aleksandr Artemenkov, Kirill Fedyanin, Fedor Noskov, Alexander Fishkov, Aleksandr Petiushko, Maxim Panov',
         'journal': 'NeurIPS 2022',
         'arxiv_link': 'https://arxiv.org/abs/2202.03101',
+        'visual_abstract': 'img/abstracts/nuq.png',
         'abstract': "This paper proposes a fast and scalable method for uncertainty quantification of machine learning models' predictions. First, we show the principled way to measure the uncertainty of predictions for a classifier based on Nadaraya-Watson's nonparametric estimate of the conditional label distribution. Importantly, the proposed approach allows to disentangle explicitly aleatoric and epistemic uncertainties. The resulting method works directly in the feature space. However, one can apply it to any neural network by considering an embedding of the data induced by the network. We demonstrate the strong performance of the method in uncertainty estimation tasks on text classification problems and a variety of real-world image datasets, such as MNIST, SVHN, CIFAR-100 and several versions of ImageNet."
     }, 
     {
@@ -28,6 +30,7 @@ var paperListMain = new Array(
         'authors': 'Alexander Gasnikov, Maxim Zhukovskii, Sergey Kim, Stepan Plaunov, Daniil Smirnov, Fedor Noskov',
         'journal': 'Numerical Analysis and Applications, volume 11, 2018, pages 16–32',
         'arxiv_link': 'https://arxiv.org/abs/1701.02595',
+        'visual_abstract': 'img/abstracts/gasnikov.png',
         'abstract': 'In the paper we investigate power law for PageRank components for the Buckley-Osthus model for web graph. We compare different numerical methods for PageRank calculation. With the best method we do a lot of numerical experiments. These experiments confirm the hypothesis about power law. At the end we discuss real model of web-ranking based on the classical PageRank approach.'
     }
 );
@@ -46,7 +49,8 @@ var paperListToAppear = new Array(
     {
         'name': 'Octopuses in the Boolean cube: families with pairwise small intersections, part II',
         'authors': 'Andrey Kupasvskii and Fedor Noskov',
-        'abstract': ''
+        'abstract': '',
+        'visual_abstract': 'img/abstracts/direction of tentacles.png'
     },
     {
         'name': 'Optimal estimation in mixed‑membership stochastic block model',
@@ -66,21 +70,33 @@ function processPaper() {
 
     summary.innerHTML = '';
 
+    let image = document.createElement('img');
+    image.className = 'abstract_image';
+
     let abstractTitle = document.createElement('div');
     abstractTitle.textContent = 'abstract';
     abstractTitle.className = 'abstract_title';    
-    summary.append(abstractTitle);
+    
 
     let abstractText = document.createElement('div');
     abstractText.className = 'abstract_text';
     
 
     if (this.id[0] == 'm') {
+        if (paperListMain[num].visual_abstract === undefined) {
+            image.src = 'img/abstracts/default.png';
+        } else {
+            image.src = paperListMain[num].visual_abstract;
+        }
+        summary.appendChild(image);
+
         if (paperListMain[num].abstract == '') {
             abstractText.textContent = 'There will be abstract';
+            summary.append(abstractTitle);
             summary.appendChild(abstractText);
             return;
         }
+
         abstractText.textContent = paperListMain[num].abstract;
         renderMathInElement(abstractText, {
             // customised options
@@ -97,11 +113,20 @@ function processPaper() {
     }
 
     if (this.id[0] == 'p') {
+        if (preprintsList[num].visual_abstract === undefined) {
+            image.src = 'img/abstracts/default.png';
+        } else {
+            image.src = preprintsList[num].visual_abstract;
+        }
+        summary.appendChild(image);
+
         if (preprintsList[num].abstract == '') {
             abstractText.textContent = 'There will be abstract';
+            summary.append(abstractTitle);
             summary.appendChild(abstractText);
             return;
         }
+
         abstractText.textContent = preprintsList[num].abstract;
         renderMathInElement(abstractText, {
             // customised options
@@ -118,11 +143,21 @@ function processPaper() {
     }
 
     if (this.id[0] == 'a') {
+        if (paperListToAppear[num].visual_abstract === undefined) {
+            image.src = 'img/abstracts/default.png';
+        } else {
+            image.src = paperListToAppear[num].visual_abstract;
+        }
+        summary.appendChild(image);
+
         if (paperListToAppear[num].abstract == '') {
+            summary.append(abstractTitle);
             abstractText.textContent = 'There will be abstract';
+            summary.append(abstractTitle);
             summary.appendChild(abstractText);
             return;
         }
+
         abstractText.textContent = paperListToAppear[num].abstract;
         renderMathInElement(abstractText, {
             // customised options
@@ -138,6 +173,7 @@ function processPaper() {
           });
     }
 
+    summary.append(abstractTitle);
     summary.appendChild(abstractText);
 }
 
@@ -150,15 +186,39 @@ function createFullViewNavigation() {
     button_main.className = 'paper_navigation_button';
     button_main.textContent = 'published/accepted';
     navigation.appendChild(button_main);
+    button_main.onclick = () => {
+        let main_list_title = document.getElementById('main_list');
+        let top = main_list_title.offsetTop;
+        window.scrollTo({
+            'top': top,
+            'behavior': 'smooth'
+        });
+    };
 
     let button_preprints = document.createElement('div');
     button_preprints.className = 'paper_navigation_button';
     button_preprints.textContent = 'preprints';
+    button_preprints.onclick = () => {
+        let preperints_title = document.getElementById('preprints');
+        let top = preperints_title.offsetTop;
+        window.scrollTo({
+            'top': top,
+            'behavior': 'smooth'
+        });
+    };
     navigation.appendChild(button_preprints);
 
     let button_appear = document.createElement('div');
     button_appear.className = 'paper_navigation_button';
     button_appear.textContent = 'to appear';
+    button_appear.onclick = () => {
+        let to_appear_title = document.getElementById('to_appear');
+        let top = to_appear_title.offsetTop;
+        window.scrollTo({
+            'top': top,
+            'behavior': 'smooth'
+        });
+    }
     navigation.appendChild(button_appear);
 
     return navigation;
