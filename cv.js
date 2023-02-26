@@ -1,6 +1,7 @@
 var cvEelement = document.createElement('div');
 cvEelement.className = 'cv';
-cvEelement.innerHTML = '<div class="content"><\div><div class="navigation></div>'
+cvEelement.innerHTML = '<div class="content" />';
+cvEelement.innerHTML += '<div class="navigation" />';
 
 
 var education_button = document.createElement('div');
@@ -24,6 +25,7 @@ cvEelement.children[0].appendChild(document.createElement('br'));
 var education = document.createElement('div');
 
 var eductationTitle = document.createElement('div');
+eductationTitle.id = 'education';
 eductationTitle.className = 'cv_education_title';
 eductationTitle.textContent = 'Education';
 education.appendChild(eductationTitle);
@@ -98,6 +100,7 @@ cvEelement.children[0].appendChild(education);
 var skills = document.createElement('div');
 
 var skills_title = document.createElement('div');
+skills_title.id = 'skills';
 skills_title.className = 'cv_title';
 skills_title.textContent = 'Skills';
 
@@ -128,6 +131,7 @@ cvEelement.children[0].appendChild(skills);
 var cv_papers = document.createElement('div');
 
 cv_papers_title = document.createElement('div');
+cv_papers_title.id = 'papers';
 cv_papers_title.className = 'cv_title';
 cv_papers_title.textContent = 'Papers';
 
@@ -136,6 +140,7 @@ cv_papers.appendChild(cv_papers_title);
 var cv_papers_button = document.createElement('div');
 cv_papers_button.className = 'button-block';
 cv_papers_button.textContent = 'see section Papers';
+cv_papers_button.onclick = papers;
 
 cv_papers.appendChild(cv_papers_button);
 
@@ -146,6 +151,7 @@ cvEelement.children[0].appendChild(cv_papers);
 var work_experience = document.createElement('div');
 
 work_experience_title = document.createElement('div');
+work_experience_title.id = 'experience';
 work_experience_title.className = 'cv_title';
 work_experience_title.textContent = 'Work Experience';
 work_experience.appendChild(work_experience_title);
@@ -269,6 +275,7 @@ cvEelement.children[0].appendChild(work_experience);
 var honors = document.createElement('div');
 
 var honors_title = document.createElement('div');
+honors_title.id = 'honors';
 honors_title.className = 'cv_title';
 honors_title.textContent = 'Honors';
 honors.appendChild(honors_title);
@@ -345,6 +352,25 @@ honors.appendChild(
 );
 
 cvEelement.children[0].appendChild(honors);
+
+function navigate(button) {
+    let title = document.getElementById(button.textContent);
+    let offset = title.offsetTop;
+    window.scrollTo({
+        'top': offset,
+        'behavior': 'smooth'
+    })
+}
+
+cvEelement.children[1].innerHTML = String.raw`
+        <div class='sticker'>
+            <div class='button' onclick='navigate(this)'>education</div>
+            <div class='button' onclick='navigate(this)'>skills</div>
+            <div class='button' onclick='navigate(this)'>papers</div>
+            <div class='button' onclick='navigate(this)'>experience</div>
+            <div class='button' onclick='navigate(this)'>honors</div>
+        </div>
+`
 
 
 

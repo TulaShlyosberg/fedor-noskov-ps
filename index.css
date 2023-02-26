@@ -48,7 +48,7 @@
 
 .home_page {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .bio {
@@ -65,6 +65,7 @@
 .bio > .description {
     margin-top: 40px;
     font-size: 16pt;
+    text-align: justify;
 }
 
 .papers_page {
@@ -180,7 +181,8 @@
 }
 
 .cv > .navigation {
-    display: flex;
+    display: block;
+    top: 10px;
     width: 20%;
 }
 
@@ -205,10 +207,21 @@ a.cv_download {
     background-color: rgb(166, 201, 189);
 }
 
-.cv > .navigation > .button {
-    width: 100%;
-    padding: 10px;
+.cv > .navigation > .sticker {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
 }
+
+.cv > .navigation > .sticker > .button {
+    width: auto;
+    font-weight: bold;
+    display: block;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+
 
 
 .cv_education_title {
@@ -313,6 +326,7 @@ a.cv_download {
 .cv_honor {
     display: flex;
     justify-content: space-between;
+    font-size: 14pt;
 }
 
 .cv_honor:nth-child(2) {
@@ -338,5 +352,9 @@ a.cv_download {
 
 .cv_honor_middle_block {
     text-align: left;
+}
+
+.cv_honor:last-child {
+    margin-bottom: 100vh;
 }
 
