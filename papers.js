@@ -231,7 +231,7 @@ function createFullViewNavigation() {
 
 function appendFull() {
     paperElement.className = 'papers_page';
-    paperElement.innerHTML = '<div id="paper_summary"><div id="paper_summary_container"></div></div>\
+    paperElement.innerHTML = '<div id="paper_summary"><div id="paper_summary_container">To see the abstract, push a paper item.</div></div>\
     <div class="papers_list"></div>';
 
     paperElement.children[1].appendChild(createFullViewNavigation());
