@@ -56,6 +56,11 @@ var paperListToAppear = new Array(
         'name': 'Optimal estimation in mixed‑membership stochastic block model',
         'authors': 'Fedor Noskov and Maxim Panov',
         'abstract': ''
+    },
+    {
+        'name': 'Graphon estimation in spectral norm and its application in Game Theory',
+        'authors': 'Olga Klopp, Fedor Noskov and Francesca Parise',
+        'abstract': ''
     }
 );
 
