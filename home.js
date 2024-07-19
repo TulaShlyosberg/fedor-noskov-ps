@@ -11,6 +11,13 @@ homeElement.innerHTML = String.raw`<div class="id_photo"><img src="img/me.jpg" w
 
             <p>My primary research interests are probabilistic methods in extremal set theory, Boolean analysis, high dimensional statistics, and algorithms on large networks.</p>
         </div>
+        <br>
+        <div class="bio_title">Links</div>
+        <div class="description">
+            <a href="https://scholar.google.com/citations?user=yspxDPsAAAAJ&hl=ru">Google Scholar</a>
+            <br>
+            <a href="https://www.linkedin.com/in/fedor-noskov-958834226/">LinkedIn</a>
+        </div>
     </div>`;
 
 function home() {
