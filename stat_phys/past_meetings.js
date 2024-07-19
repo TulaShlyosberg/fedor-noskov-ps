@@ -1,0 +1,3 @@
+function pastMeetings() {
+    setState('past');
+}

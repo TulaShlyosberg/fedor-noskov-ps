@@ -13,10 +13,13 @@
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
         <link rel="stylesheet" href="index.css">
-        <script src="stat_phys/stat_phys_main.js"></script>
+        <link rel="stylesheet" href="stat_phys/stat_phys.css">
+        <script src="stat_phys/description.js"></script>
+        <script src="stat_phys/past_meetings.js"></script>
+        <script src="stat_phys/upcoming_meetings.js"></script>
         <script src="script.js"></script>
         <script>
-            window.onload = main_page;
+            window.onload = description;
         </script>
     </head>
     <body>
@@ -30,16 +33,16 @@
         </div>
         <div class="buttons">
             <div class="button" id="description">Description</div>
-            <div class="button" id="archive">Archive</div>
+            <div class="button" id="upcoming">Upcoming meetings</div>
+            <div class="button" id="past">Past meetings</div>
         </div>
         <div id="main">
             <div class="empty_child"></div>
         </div>
         <script>
-            document.getElementById('home').onclick = home;
-            document.getElementById('papers_page').onclick = papers;
-            document.getElementById('cv').onclick = cv;
-            document.getElementById('seminars').onclick = seminars;
+            document.getElementById('description').onclick = description;
+            document.getElementById('upcoming').onclick = upcomingMeetings;
+            document.getElementById('past').onclick = pastMeetings;
         </script>
     </body>
 </html>

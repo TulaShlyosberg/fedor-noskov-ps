@@ -9,7 +9,8 @@ var paperListMain = new Array(
         'authors': 'V. Plassier, N. Kotelevskii, A. Rubashevskii, F. Noskov, M. Velikanov, A. Fishkov, S. Horvath, M. Takac, E. Moulines, M. Panov',
         'arxiv_link': 'https://proceedings.mlr.press/v238/plassier24a/plassier24a.pdf',
         'visual_abstract': 'img/abstracts/plot_conf_predictions.png',
-        'abstract': String.raw`Conformal prediction (CP) stands out as a robust framework for uncertainty quantification, which is crucial for ensuring the reliability of predictions. However, common CP methods heavily rely on the data exchangeability, a condition often violated in practice. Existing approaches for tackling non-exchangeability lead to methods that are not computable beyond the simplest examples. In this work, we introduce a new efficient approach to CP that produces provably valid confidence sets for fairly general non-exchangeable data distributions. We illustrate the general theory with applications to the challenging setting of federated learning under data heterogeneity between agents. Our method allows constructing provably valid personalized prediction sets for agents in a fully federated way. The effectiveness of the proposed method is demonstrated in a series of experiments on real-world datasets.`
+        'abstract': String.raw`Conformal prediction (CP) stands out as a robust framework for uncertainty quantification, which is crucial for ensuring the reliability of predictions. However, common CP methods heavily rely on the data exchangeability, a condition often violated in practice. Existing approaches for tackling non-exchangeability lead to methods that are not computable beyond the simplest examples. In this work, we introduce a new efficient approach to CP that produces provably valid confidence sets for fairly general non-exchangeable data distributions. We illustrate the general theory with applications to the challenging setting of federated learning under data heterogeneity between agents. Our method allows constructing provably valid personalized prediction sets for agents in a fully federated way. The effectiveness of the proposed method is demonstrated in a series of experiments on real-world datasets.`,
+        'journal': 'AISTATS 2024'
     },
     {
         'name': 'Octopuses in the Boolean cube: families with pairwise small intersections, part I',
@@ -191,6 +192,7 @@ function processPaper() {
 
 
 function createFullViewNavigation() {
+
     var navigation = document.createElement('div');
     navigation.className = 'paper_navigation';
 
@@ -246,7 +248,7 @@ function appendFull() {
 
     //main papers list
 
-    var main_list_title = document.createElement('div');
+    let main_list_title = document.createElement('div');
     main_list_title.id = 'main_list';
     main_list_title.className = 'main_list_title';
     main_list_title.textContent = 'Published or Accepted';
@@ -254,7 +256,7 @@ function appendFull() {
 
     paperElement.children[1].appendChild(main_list_title);
 
-    for(var i = 0; i < paperListMain.length; ++i) {
+    for(let i = 0; i < paperListMain.length; ++i) {
         let paper = document.createElement('div');
         paper.className = 'paper';
 
@@ -294,14 +296,14 @@ function appendFull() {
 
     //preprints list
 
-    var preprints = document.createElement('div');
+    let preprints = document.createElement('div');
     preprints.id = 'preprints';
     preprints.className = 'other_types';
     preprints.textContent = 'Preprints';
     paperElement.children[1].appendChild(preprints);
 
 
-    for(var i = 0; i < preprintsList.length; ++i) {
+    for(let i = 0; i < preprintsList.length; ++i) {
         let paper = document.createElement('div');
         paper.className = 'paper';
 
@@ -340,13 +342,13 @@ function appendFull() {
 
     // to appear list
 
-    var to_appear = document.createElement('div');
+    let to_appear = document.createElement('div');
     to_appear.id = 'to_appear';
     to_appear.className = 'other_types';
     to_appear.textContent = 'To Appear';
     paperElement.children[1].append(to_appear);
 
-    for(var i = 0; i < paperListToAppear.length; ++i) {
+    for(let i = 0; i < paperListToAppear.length; ++i) {
         let paper = document.createElement('div');
         paper.className = 'paper';
 
@@ -369,6 +371,138 @@ function appendFull() {
 }
 
 
+function appendReduced() {
+    paperElement.className = 'papers_page_reduced';
+    paperElement.innerHTML = '<div class="papers_list_reduced"></div>';
+
+    paperElement.children[0].appendChild(createFullViewNavigation());
+
+
+    //main papers list
+
+    let main_list_title = document.createElement('div');
+    main_list_title.id = 'main_list';
+    main_list_title.className = 'main_list_title_reduced';
+    main_list_title.textContent = 'Published or Accepted';
+
+
+    paperElement.children[0].appendChild(main_list_title);
+
+    for(let i = 0; i < paperListMain.length; ++i) {
+        let paper = document.createElement('div');
+        paper.className = 'paper_reduced';
+
+        paper.textContent = paperListMain[i].authors + '. ';
+
+    
+        if (paperListMain[i].arxiv_link != '') {
+            let title = document.createElement('a');
+            title.className = 'paper_title_reduced';
+            title.textContent = paperListMain[i]['name'];
+            title.href = paperListMain[i].arxiv_link;
+            paper.appendChild(title);
+        } else {
+            let title = document.createElement('span');
+            title.className = 'paper_title_reduced';
+            title.textContent = preprintsList[i]['name'];
+            paper.appendChild(title);
+        }
+        
+
+        if (paperListMain[i].journal != '') {
+            let journal = document.createElement('span');
+            journal.className = 'paper_journal_reduced';
+            journal.innerHTML = ', ' + paperListMain[i].journal;
+            paper.appendChild(journal);
+        }
+
+        paper.id = 'm_paper_' + i.toString();
+
+        // paper.onclick = processPaper;
+
+        paperElement.children[0].appendChild(paper);
+    }
+
+
+    //preprints list
+
+    var preprints = document.createElement('div');
+    preprints.id = 'preprints';
+    preprints.className = 'main_list_title_reduced';
+    preprints.textContent = 'Preprints';
+    paperElement.children[0].appendChild(preprints);
+
+
+    for(var i = 0; i < preprintsList.length; ++i) {
+        let paper = document.createElement('div');
+        paper.className = 'paper_reduced';
+
+        let authors = document.createElement('span');
+        authors.className = 'paper_authors_reduced';
+        authors.textContent = preprintsList[i].authors + '. ';
+        paper.appendChild(authors);
+
+        if (preprintsList[i].arxiv_link != '') {
+            let title = document.createElement('a');
+            title.className = 'paper_title_reduced';
+            title.textContent = preprintsList[i]['name'];
+            title.href = preprintsList[i].arxiv_link;
+            paper.appendChild(title);
+        } else {
+            let title = document.createElement('span');
+            title.className = 'paper_title_reduced-no-link';
+            title.textContent = preprintsList[i]['name'];
+            paper.appendChild(title);
+        }
+
+        if (preprintsList[i].journal != '') {
+            let journal = document.createElement('span');
+            journal.className = 'paper_journal_reduced';
+            journal.innerHTML = ', ' + preprintsList[i].journal;
+            paper.appendChild(journal);
+        }
+
+        
+        
+        
+
+        paper.id = 'p_paper_' + i.toString();
+
+        paper.onclick = processPaper;
+
+        paperElement.children[0].appendChild(paper);
+    }
+
+    // to appear list
+
+    var to_appear = document.createElement('div');
+    to_appear.id = 'to_appear';
+    to_appear.className = 'main_list_title_reduced';
+    to_appear.textContent = 'To Appear';
+    paperElement.children[0].append(to_appear);
+
+    for(var i = 0; i < paperListToAppear.length; ++i) {
+        let paper = document.createElement('div');
+        paper.className = 'paper_reduced';
+
+        let authors = document.createElement('span');
+        authors.className = 'paper_authors_reduced';
+        authors.textContent = paperListToAppear[i].authors + '. ';
+        paper.appendChild(authors);
+
+        let title = document.createElement('span');
+        title.className = 'paper_title_reduced-no-link';
+        title.textContent = paperListToAppear[i]['name'];
+        paper.appendChild(title);
+
+        paper.id = 'a_paper_' + i.toString();
+
+        paper.onclick = processPaper;
+
+        paperElement.children[0].appendChild(paper);
+    }
+}
+
 function setPapersState(state) {
     if (paperElementState == state) {
         return;
@@ -382,7 +516,7 @@ function setPapersState(state) {
 
 function papers() {
     document.getElementById('main').innerHTML = '';
-    appendFull();
+    appendReduced();
     document.getElementById('main').appendChild(paperElement);
     setState('papers_page');
 };

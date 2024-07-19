@@ -6,4 +6,6 @@ function setState(state) {
     }
     let button = document.getElementById(state);
     button.classList.add('active');
+
+    renderMathInElement(document.body)
 }
