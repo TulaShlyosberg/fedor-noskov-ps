@@ -18,17 +18,6 @@
         <script src="cv.js"></script>
         <script src="script.js"></script>
         <script src="seminars.js"></script>
-        <script>
-            let pages = document.getElementsByClassName('button');
-            let pages_id = Array();
-            for (let i = 0; i < pages.length; ++i) {
-                pages_id.push(pages[i].id);
-            }
-            console.log(pages_id);
-            if (pages_id.includes(location.pathname.substr(17))) {
-                document.getElementById(location.pathname.substr(17)).onclick();
-            }
-        </script>
     </head>
     <body>
         <div class="header">
@@ -50,6 +39,14 @@
             document.getElementById('papers_page').onclick = papers;
             document.getElementById('cv').onclick = cv;
             document.getElementById('seminars').onclick = seminars;
+            let pages = document.getElementsByClassName('button');
+            let pages_id = Array();
+            for (let i = 0; i < pages.length; ++i) {
+                pages_id.push(pages[i].id);
+            }
+            if (pages_id.includes(location.pathname.substr(17))) {
+                document.getElementById(location.pathname.substr(17)).onclick();
+            }
         </script>
     </body>
 </html>
