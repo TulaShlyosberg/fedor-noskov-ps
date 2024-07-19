@@ -47,6 +47,13 @@
             if (pages_id.includes(location.pathname.substr(17))) {
                 document.getElementById(location.pathname.substr(17)).onclick();
             }
+            else {
+                let element404 = document.createElement('div');
+                element404.classList.add('class404');
+                element404.innerText = 'Page not found';
+                document.getElementById('main').innerHTML = '';
+                document.getElementById('main').appendChild(element404);
+            }
         </script>
     </body>
 </html>
