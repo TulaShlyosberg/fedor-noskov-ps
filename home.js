@@ -16,4 +16,5 @@ homeElement.innerHTML = String.raw`<div class="id_photo"><img src="img/me.jpg" w
 function home() {
     document.getElementById('main').innerHTML = '';
     document.getElementById('main').appendChild(homeElement);
+    setState('home');
 };

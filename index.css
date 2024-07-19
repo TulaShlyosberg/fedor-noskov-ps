@@ -17,16 +17,17 @@
 
 .buttons {
     margin-top: 20px;
-    width: 60%;
+    width: 50%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 3%;
     font-size: 24pt;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .button {
-    width: 30%;
+    width: 20%;
     text-align: center;
     border-style: solid;
     border-width: 2px;
@@ -36,6 +37,10 @@
 .button:hover {
     background-color: rgb(166, 201, 189);
     cursor: pointer;
+}
+
+.active {
+    background-color: rgb(127, 182, 237);
 }
 
 #main {
@@ -358,3 +363,10 @@ a.cv_download {
     margin-bottom: 100vh;
 }
 
+
+.subtitle {
+    width: 100%;
+    font-size: 30pt;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}

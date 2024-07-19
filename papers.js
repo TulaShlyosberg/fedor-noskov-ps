@@ -384,4 +384,5 @@ function papers() {
     document.getElementById('main').innerHTML = '';
     appendFull();
     document.getElementById('main').appendChild(paperElement);
+    setState('papers_page');
 };

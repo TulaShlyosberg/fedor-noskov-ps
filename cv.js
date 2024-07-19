@@ -377,4 +377,5 @@ cvEelement.children[1].innerHTML = String.raw`
 function cv() {
     document.getElementById('main').innerHTML = '';
     document.getElementById('main').appendChild(cvEelement);
+    setState('cv');
 }
