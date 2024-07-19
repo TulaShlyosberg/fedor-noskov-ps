@@ -5,6 +5,13 @@ var paperElementState = 'full';
 
 var paperListMain = new Array(
     {
+        'name': 'Efficient Conformal Prediction under Data Heterogeneity',
+        'authors': 'V. Plassier, N. Kotelevskii, A. Rubashevskii, F. Noskov, M. Velikanov, A. Fishkov, S. Horvath, M. Takac, E. Moulines, M. Panov',
+        'arxiv_link': 'https://proceedings.mlr.press/v238/plassier24a/plassier24a.pdf',
+        'visual_abstract': 'img/abstracts/plot_conf_predictions.png',
+        'abstract': String.raw`Conformal prediction (CP) stands out as a robust framework for uncertainty quantification, which is crucial for ensuring the reliability of predictions. However, common CP methods heavily rely on the data exchangeability, a condition often violated in practice. Existing approaches for tackling non-exchangeability lead to methods that are not computable beyond the simplest examples. In this work, we introduce a new efficient approach to CP that produces provably valid confidence sets for fairly general non-exchangeable data distributions. We illustrate the general theory with applications to the challenging setting of federated learning under data heterogeneity between agents. Our method allows constructing provably valid personalized prediction sets for agents in a fully federated way. The effectiveness of the proposed method is demonstrated in a series of experiments on real-world datasets.`
+    },
+    {
         'name': 'Octopuses in the Boolean cube: families with pairwise small intersections, part I',
         'authors': 'Andrei Kupavskii and Fedor Noskov',
         'journal': 'accepted to Journal of Combinatorial Theory, Series B',
