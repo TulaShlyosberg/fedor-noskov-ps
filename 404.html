@@ -22,9 +22,10 @@
             let pages = document.getElementsByClassName('button');
             let pages_id = Array();
             for (let i = 0; i < pages.length; ++i) {
-                pages_id.add(pages[i].id);
+                pages_id.push(pages[i].id);
             }
-            if (location.pathname.substr(17) in pages_id) {
+            console.log(pages_id);
+            if (pages_id.includes(location.pathname.substr(17))) {
                 document.getElementById(location.pathname.substr(17)).onclick();
             }
         </script>
