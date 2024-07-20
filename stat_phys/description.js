@@ -21,18 +21,18 @@ descriptionPage.className = 'desciption-reading-group';
 var descriptionText = document.createElement('div');
 descriptionText.className = 'description-text';
 descriptionText.innerHTML = String.raw`
-    <p>The aim of the reading group is to study applications of Statistical Physics techniques in Combinatorics, Statistics, Sampling, Machine Learning, Coding, etc. Each week participants come together to discuss a paper, a chapter of a textbook, or to listen a talk on some research topic. During the prepration for the weekly meeting, each particpant studies the material and solves exercises.</p>
+    <p>The aim of the reading group is to explore applications of Statistical Physics techniques in Computer Science. Each week, we meet to discuss a research paper, a textbook chapter, or to listen to a talk on a research topic. Before a meeting, participants study the material and work on exercises. Check <span id="textbook-link">textbooks</span> we are reading.</p>
+    <p>All meetings are held in Zoom. A weekday and time are determined by voting.</p>
     <p>Contact person: <a href="https://tulashlyosberg.github.io/fedor-noskov-ps">Fedor Noskov</a>, fnoskov@hse.ru.</p>
 `;
-
-
 
 var books = document.createElement('div');
 books.className = 'reading-group-books';
 
-var readingGroupBooks = document.createElement('div')
+var readingGroupBooks = document.createElement('div');
+readingGroupBooks.id = 'textbook-title';
 readingGroupBooks.className = 'description-title';
-readingGroupBooks.innerHTML = 'Textbooks being studied on the reading group'
+readingGroupBooks.innerHTML = 'Textbooks we study'
 
 books.appendChild(readingGroupBooks);
 
@@ -75,5 +75,13 @@ descriptionPage.appendChild(books);
 function description() {
     document.getElementById('main').innerHTML = '';
     document.getElementById('main').appendChild(descriptionPage);
+    document.getElementById('textbook-link').onclick = () => {
+        let textbook_title = document.getElementById('textbook-title');
+        let top = textbook_title.offsetTop;
+        window.scrollTo({
+            'top': top,
+            'behavior': 'smooth'
+        });
+    };
     setState('description');
 }

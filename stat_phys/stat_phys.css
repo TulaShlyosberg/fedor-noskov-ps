@@ -1,19 +1,55 @@
+.header-stat-phys {
+    position: sticky;
+    top: 0;
+}
+
+
 .desciption-reading-group {
-    display: flex;
-    justify-content: space-between;
+    display: block;
+}
+
+.main-description {
+    background-image: url('../img/background.jpg');
+    background-position:right;
+    background-size: cover;
+    background-size: 110%;
+    background-attachment: fixed;
+}
+
+.main-upcoming {
+    background-image: url('../img/background-upcoming.jpg');
+    background-position:right;
+    background-size: cover;
+    background-size: 110%;
+    background-attachment: fixed;
+}
+
+.main-past {
+    background-image: url('../img/background-past.jpg');
+    background-position:right;
+    background-size: cover;
+    background-size: 110%;
+    background-attachment: fixed;
 }
 
 .description-text {
     font-size: 16pt;
-    width: 48%;
+    block-size: 100%;
+    width: 70%;
+    /* position: fixed; */
     background-color: white;
     padding: 10px;
     height: fit-content;
     box-shadow: -5px 5px 5px -5px;
+    margin: auto;
+    margin-top: 10%;
 }
 
 .reading-group-books {
+    margin: auto;
+    margin-top: 30%;
     width: 50%;
+    margin-bottom: 10%;
 }
 
 .reading-group-books > .book {
@@ -51,4 +87,12 @@
     font-weight: bold;
     font-size: 18pt;
     text-decoration:underline;
+    background-color: rgb(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 3px;
+}
+
+#textbook-link {
+    cursor: pointer;
+    text-decoration: underline;
 }
