@@ -22,6 +22,8 @@
     background-size: cover;
     background-size: 110%;
     background-attachment: fixed;
+    height: auto;
+    min-height: 100vh;
 }
 
 .main-past {
@@ -30,6 +32,8 @@
     background-size: cover;
     background-size: 110%;
     background-attachment: fixed;
+    height: auto;
+    min-height: 100vh;
 }
 
 .description-text {
@@ -95,4 +99,49 @@
 #textbook-link {
     cursor: pointer;
     text-decoration: underline;
+}
+
+.event-list {
+    display: block;
+    width: 50%;
+
+    background-color: white;
+    padding: 10px;
+    height: fit-content;
+    box-shadow: -5px 5px 5px -5px;
+}
+
+.event {
+    font-size: 16pt;
+    display: block;
+    width: 97%;
+    margin-bottom: 20px;
+    padding: 10px;
+    /* border-bottom: 4px double #333; */
+    border-top: 4px double #999;
+
+}
+
+.event > .event-date {
+    font-style: italic;
+    margin-bottom: 10pt;
+    font-size: 16pt;
+    color: rgb(107, 107, 101);
+}
+
+.event > .event-topic {
+    font-size: 16pt;
+    /* text-decoration: underline; */
+}
+
+
+.event > .event-abstarct {
+    margin-top: 10pt;
+    font-size: 16pt;
+    font-style: italic;
+}
+
+.event > .event-record {
+    font-style: italic;
+    margin-top: 10pt;
 }
