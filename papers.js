@@ -5,6 +5,13 @@ var paperElementState = 'full';
 
 var paperListMain = new Array(
     {
+        'name': 'Sharper dimension-free bounds on the Frobenius distance between sample covariance and its expectation',
+        'authors': 'Nikita Puchkin, Fedor Noskov, Vladimir Spokoiny',
+        'arxiv_link': 'https://arxiv.org/pdf/2308.14739',
+        'journal': 'accepted to Bernoulli',
+        'abstract': String.raw`We study properties of a sample covariance estimate $\widehat \Sigma$ given a finite sample of $n$ i.i.d. centered random elements in $\R^d$ with the covariance matrix $\Sigma$. We derive dimension-free bounds on the squared Frobenius norm of $(\widehat\Sigma - \Sigma)$ under reasonable assumptions. For instance, we show that $\smash{\|\widehat\Sigma - \Sigma\|_{\rm F}^2}$ differs from its expectation by at most $\smash{\mathcal O({\rm{Tr}}(\Sigma^2) / n)}$ with overwhelming probability, which is a significant improvement over the existing results. This allows us to establish the concentration phenomenon for the squared Frobenius distance between the covariance and its empirical counterpart in the case of moderately large effective rank of $\Sigma$.`
+    },
+    {
         'name': 'Efficient Conformal Prediction under Data Heterogeneity',
         'authors': 'V. Plassier, N. Kotelevskii, A. Rubashevskii, F. Noskov, M. Velikanov, A. Fishkov, S. Horvath, M. Takac, E. Moulines, M. Panov',
         'arxiv_link': 'https://proceedings.mlr.press/v238/plassier24a/plassier24a.pdf',
