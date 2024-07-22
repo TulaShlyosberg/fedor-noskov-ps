@@ -51,9 +51,9 @@
 
 .reading-group-books {
     margin: auto;
-    margin-top: 30%;
+    margin-top: 10vh;
     width: 50%;
-    margin-bottom: 10%;
+    min-height: 80vh;
 }
 
 .reading-group-books > .book {
