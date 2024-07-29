@@ -20,6 +20,13 @@ function printPastEvents() {
 
             event.appendChild(topic)
 
+            if (events[i].speaker != undefined) {
+                let speaker = document.createElement('div');
+                speaker.className = 'event-speaker';
+                speaker.innerHTML = '<b>Speaker:</b> ' + events[i].speaker;
+                event.appendChild(speaker);
+            }
+
             if (events[i].abstract !== undefined) {
                 let abstract = document.createElement('div');
                 abstract.className = 'event-abstarct';

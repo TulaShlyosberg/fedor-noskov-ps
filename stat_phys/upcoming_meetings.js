@@ -2,7 +2,7 @@ var events = Array(
     {
         'date': 'Week 3 of August',
         'threshold': new Date('2024-08-18'),
-        'topic': 'Discussion of the paper "Large Cliques Elude the Metropolis Process" by Jerrum',
+        'topic': 'Discussion of the paper "Large Cliques Elude the Metropolis Process" by Jerrum'
     },
     {
         'date': 'Week 2 of August',
@@ -13,6 +13,7 @@ var events = Array(
         'date': 'Week 1 of August',
         'threshold':  new Date('2024-08-04'),
         'topic': 'Discussion of the paper <a href="https://people.maths.ox.ac.uk/scott/Papers/lllshort.pdf">"On Dependency Graphs and the Lattice Gas"</a> by Scott and Sokal',
+        'speaker': 'Aiya Kuchukova',
         'abstract': String.raw`We elucidate the close connection between the repulsive lattice gas in equilibrium statistical mechanics and the Lovasz local lemma in probabilistic combinatorics. We show that the conclusion of the Lovasz local lemma holds for
         dependency graph G and probabilities $\{p_x\}$ if and only if the independent-set
         polynomial for G is nonvanishing in the polydisc of radii $\{p_x\}$. Furthermore,
@@ -27,6 +28,7 @@ var events = Array(
         'date': 'Week 4 of July',
         'threshold': new Date('2024-07-28'),
         'topic':  'Discussion of Exercises 23-27 from "Five lectures..."',
+        'record': 'https://disk.yandex.ru/i/uL9KnLtEkNTtIw'
     },
     {
         'date': 'Week 5 of June',
@@ -104,6 +106,13 @@ function printUpcomingEvents() {
             topic.className = 'event-topic';
             topic.innerHTML = '<b><u>Topic:</u></b><br>'+ events[i].topic;
             event.appendChild(topic)
+
+            if (events[i].speaker != undefined) {
+                let speaker = document.createElement('div');
+                speaker.className = 'event-speaker';
+                speaker.innerHTML = '<b>Speaker:</b> ' + events[i].speaker;
+                event.appendChild(speaker);
+            }
 
             if (events[i].abstract !== undefined) {
                 let abstract = document.createElement('div');

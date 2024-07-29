@@ -145,3 +145,8 @@
     font-style: italic;
     margin-top: 10pt;
 }
+
+.event > .event-speaker {
+    margin-top: 10pt;
+    font-size: 16pt;
+}
