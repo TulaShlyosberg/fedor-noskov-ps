@@ -30,7 +30,7 @@ function printPastEvents() {
             if (events[i].abstract !== undefined) {
                 let abstract = document.createElement('div');
                 abstract.className = 'event-abstarct';
-                abstract.innerHTML = events[i].abstract;
+                abstract.innerHTML = '<b><u>Abstract:</u></b><br>'+ events[i].abstract;
                 event.appendChild(abstract);
             }
 
