@@ -1,12 +1,12 @@
 var events = Array(
     {
-        'date': 'Week 3 of August',
-        'threshold': new Date('2024-08-18'),
+        'date': 'Week 4 of August',
+        'threshold': new Date('2024-08-25'),
         'topic': 'Discussion of the paper "Large Cliques Elude the Metropolis Process" by Jerrum'
     },
     {
-        'date': 'Week 2 of August',
-        'threshold': new Date('2024-08-11'),
+        'date': 'Week 3 of August',
+        'threshold': new Date('2024-08-18'),
         'topic': 'Discussion of the paper <a href="https://www.drorweitz.com/ac/pubs/ind_from_tree.pdf">"Counting independent sets up to the tree threshold"</a> by Weitz',
     },
     {
