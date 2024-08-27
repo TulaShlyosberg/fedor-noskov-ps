@@ -71,7 +71,7 @@ var paperListToAppear = new Array(
         'name': 'Optimal estimation in mixed‑membership stochastic block model',
         'authors': 'Fedor Noskov and Maxim Panov',
         'abstract': ''
-    }ß
+    }
 );
 
 
