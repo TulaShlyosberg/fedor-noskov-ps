@@ -201,7 +201,6 @@ work_experience.appendChild(
         new Array(
             'Studying graphon estimation in spectral norm with application to intervention design in large networks',
             'Writing draft of a paper',
-            'The poject was joint with Olga Klopp and Francesca Parise'
         )
     )
 );
